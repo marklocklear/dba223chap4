@@ -1,0 +1,13 @@
+<h1>Programs</h1>
+<%= form_tag :action => 'create' do %>
+<p>Enter program name:
+<%= text_field_tag 'name' %></p>
+<%= submit_tag 'Create program' %>
+<% end %>
+
+<p>Programs</p>
+<ul>
+<% @programs.each do |p| %>
+  <li><%=h p.name %></li></br>
+<% end %>
+</ul>

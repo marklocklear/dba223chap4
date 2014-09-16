@@ -1,0 +1,14 @@
+<h1>Students</h1>
+<%= form_tag :action => 'create' do %>
+<p>Enter student name:
+<%= text_field_tag 'name' %></p>
+Program: <%=  collection_select(:id, :program_id, @programs, :id, :name) %></br>
+<%= submit_tag 'Create Student' %>
+<% end %>
+
+<p>Students</p>
+<ul>
+<% @students.each do |s| %>
+  <li>Name:<%=h s.name %> Program:<%=h s.program.name %></li></br>
+<% end %>
+</ul>
